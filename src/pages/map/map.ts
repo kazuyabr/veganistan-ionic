@@ -195,9 +195,14 @@ export class MapPage {
     }, 300);
   }
 
-  distance(lat1, lon1, lat2, lon2, unit): number {
+  distance(latlng, unit): number {
     // calculates the distance between two geolocations
     // and returns the answer in either Miles (US), Kilometers och Meters
+    var lat1 = latlng[1];
+    var lon1 = latlng[0];
+    var lat2 = this.userposition.lat;
+    var lon2 = this.userposition.lng;
+
     var radlat1 = Math.PI * lat1/180
     var radlat2 = Math.PI * lat2/180
     var theta = lon1-lon2
@@ -208,7 +213,7 @@ export class MapPage {
     dist = dist * 60 * 1.1515
     if (unit=="K") { dist = dist * 1.609344 }
     if (unit=="M") { dist = dist * 1,609.344 }
-    return dist
+    return Math.round( dist * 10) / 10;
   }
 
   ngAfterViewInit(): void {

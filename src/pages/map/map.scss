@@ -26,6 +26,21 @@ div.scroll-content {
 		ion-card {
 			height: calc(100% - 24px);
 			border-radius: 5px;
+
+			ion-icon[name="star"],
+			ion-icon[name="star-half"],
+			ion-icon[name="star-outline"] {
+				font-size: 1.5rem;
+			}
+
+			ion-badge[name="distance"] {
+				margin-right: 1rem;
+			}
+
+			ion-card-content {
+				border-top: 1px solid #f4f4f4;
+				padding-top: 13px;
+			}
 		}
 	}
 }
