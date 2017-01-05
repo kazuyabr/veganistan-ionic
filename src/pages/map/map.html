@@ -1,0 +1,19 @@
+<ion-content no-bounce class="map no-scroll">
+  <div style="height: 100%;" id="map_canvas">
+    <ion-spinner *ngIf="loading"></ion-spinner>
+    <div id="place" [@heroState]="placeState">
+      <ion-card *ngIf="place">
+        <ion-item (click)="toggleFoldedState()">
+          <ion-icon name="md-restaurant" item-left large></ion-icon>
+          <h2 [innerHTML]="place.title"></h2>
+          <p>{{place.adress.street_address}}, {{place.adress.postal_code}} {{place.adress.city}}</p>
+          <ion-icon *ngIf="placeState=='unfolded'" name="ios-arrow-dropdown" item-right large></ion-icon>
+          <ion-icon *ngIf="placeState!='unfolded'" name="ios-arrow-dropup" item-right large></ion-icon>
+        </ion-item>
+        <ion-item *ngIf="placeState=='unfolded'">
+          <p>{{place.description}}</p>
+        </ion-item>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
