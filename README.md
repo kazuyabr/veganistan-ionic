@@ -1,4 +1,4 @@
-# Veganisatal
+# Veganistan
 Integrating Ionic 2, Google Maps Native Plugin and a REST API for fetching data about swedish vegan restaurants.
 
 Tested on IOS.
